@@ -179,7 +179,7 @@ a {
 }
 
 .card--left .card__text,
-.card--left .card____text--list {
+.card--left .card__text--list {
   grid-column: 1;
 }
 
@@ -198,7 +198,7 @@ a {
 }
 
 .card--right .card__text,
-.card--right .card____text--list {
+.card--right .card__text--list {
   grid-column: 2;
 }
 
@@ -224,4 +224,213 @@ a {
   font-size: clamp(0.9rem, 1.3vw, 1rem);
   line-height: 1.7;
   text-align: justify;
+}
+
+.card__text--list {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.card__text--list .card__text {
+  position: relative;
+  padding-left: 0.6rem;
+}
+
+.card__text--list .card__text::before {
+  content: "•";
+  color: var(--rose);
+  position: absolute;
+  left: -0.8rem;
+}
+
+.card__image {
+  width: 100%;
+  height: clamp(200px, 28vw, 380px);
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #d4c5d8, #e8dded);
+  box-shadow: var(--shadow);
+}
+
+.card__link {
+  display: inline-block;
+  padding: 0.65rem 1.8rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.02rem;
+  transition:
+    background-color var(--transition),
+    color var(--transition),
+    trasform var(--transition);
+  align-self: start;
+}
+
+.card__link--constat {
+  border: 1.5px solid var(--plum);
+  color: var(--plum);
+  background: transparent;
+}
+
+.card__link--constat:hover,
+.card__link--constat:focus-visible {
+  background-color: var(--plum);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.card__link--value {
+  background-color: var(--rose);
+  color: #fff;
+  border: 1.5px solid var(--rose);
+}
+
+.card__link--value:hover,
+.card__link--value:focus-visible {
+  background-color: var(--rose-light);
+  border-color: var(--rose-light);
+  transform: translateY(-2px);
+}
+
+/* WHYCHOSEUS */
+
+.whyChoseUs {
+  background-color: var(--lavender-bg);
+  padding: clamp(3rem, 5vw, 5rem) clamp(1.5rem, 5vw, 5rem);
+  text-align: center;
+}
+
+.whyChoseUs__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  color: var(--plum);
+  font-weight: 600;
+  margin-bottom: clamp(2rem, 3vw, 3rem);
+}
+
+.whyChoseUs__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.whyChoseUs__card {
+  background-color: var(--off-white);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 2.5vw, 2.5rem) clamp(1rem, 2vw, 2rem);
+  text-align: left;
+  box-shadow: var(--shadow);
+  transition:
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.whyChoseUs__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(92, 31, 78, 0.15);
+}
+
+.whyChoseUs__card--title {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  color: var(--plum);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.whyChoseUs__card--text {
+  font-size: clamp(0.85rem, 1.2vw, 0.95rem);
+  color: var(--text-body);
+  line-height: 1.65;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: var(--off-white);
+  border-top: 1px solid var(--border);
+  padding: 1.5rem clamp(1.5rem, 5vw, 4rem);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer__socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--plum);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color var(--transition);
+}
+
+.footer__socialLink img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.footer__socialLink:hover,
+.footer__socialLink:focus-visible {
+  color: var(--rose);
+}
+
+.copyright {
+  font-size: 0.8rem;
+  color: var(--text-body);
+  opacity: 0.7;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .card--left,
+  .card--right {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .card--left .card__title,
+  .card--left .card__text,
+  .card--left .card__text--list,
+  .card--left .card__link,
+  .card--left .card__image,
+  .card--right .card__title,
+  .card--right .card__text,
+  .card--right .card__text--list,
+  .card--right .card__link,
+  .card--right .card__image {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .card__image {
+    height: 260px;
+  }
+
+  .whyChoseUs__list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero__link {
+    margin-top: 1.5rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 }
