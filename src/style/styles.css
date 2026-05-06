@@ -10,7 +10,7 @@
   --border: #d9c5d4;
 
   --font-script: "Great Vibes", cursive;
-  --font-display: "Cormorant Garamond", serif;
+  --font-display: "Anton", serif;
   --font-body: "Nunito", sans-serif;
 
   --radius: 6px;
@@ -93,6 +93,8 @@ a {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  overflow: hidden;
+  position: relative;
 }
 
 .hero__title--main {
@@ -119,10 +121,13 @@ a {
 
 .hero__splash {
   width: 100%;
-  height: clamp(300px, 50vw, 600px);
+  height: clamp(350px, 60vw, 600px);
   object-fit: cover;
-  object-position: center top;
+  object-position: 50% 100%;
+  transform-origin: center 30%;
   display: block;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero__splash[src=""] {
@@ -247,7 +252,7 @@ a {
 
 .card__image {
   width: 100%;
-  height: clamp(200px, 28vw, 380px);
+  height: clamp(300px, 58vw, 680px);
   object-fit: cover;
   border-radius: var(--radius-lg);
   background: linear-gradient(135deg, #d4c5d8, #e8dded);
